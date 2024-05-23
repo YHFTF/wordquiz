@@ -7,7 +7,7 @@
 
 ## 😶 Contributor   
   - ## CBNU 
-    - #####  2021041019 박영현 [Github](#https://github.com/YHFTF)
-    - #####  2021041028 육광민 [Github](#https://github.com/utella42)
-    - #####  2023078019 정현준 [Github](#https://github.com/goodycloud)
+    - #####  2021041019 박영현 [Github](https://github.com/YHFTF)
+    - #####  2021041028 육광민 [Github](https://github.com/utella42)
+    - #####  2023078019 정현준 [Github](https://github.com/goodycloud)
    
