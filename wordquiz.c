@@ -1,8 +1,27 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <dirent.h>
 #include <ctype.h>
+#include <time.h>
+
+char *strndup(const char *s, size_t n)
+{
+    char *result;
+    size_t len = strlen(s);
+
+    if (n < len)
+        len = n;
+
+    result = (char *)malloc(len + 1);
+    if (!result)
+        return 0;
+
+    result[len] = '\0';
+    return (char *)memcpy(result, s, len);
+}
+// prevent error 'incompatible implicit declaration of built-in function 'strndup' [-Wbuiltin-declaration-mismatch]'
 
 
 typedef 
@@ -113,18 +132,41 @@ void show_words ()
 
 	FILE * fp = fopen(filepath, "r") ;
 
+	char * randword[128];
+	char * randmeaning[128];
+	int i = 0;
 	printf("\n  -----\n") ;
 	char * line ;
-	while (line = read_a_line(fp)) {
+		while (line = read_a_line(fp)) {
 		char * word = strtok(line, "\"") ;
 		strtok(NULL, "\"") ;
 		char * meaning = strtok(NULL, "\"") ;
+<<<<<<< Updated upstream
 
 		printf("  %s : %s\n", word, meaning) ;
 
 		free(line) ;
+=======
+		randword[i] = word;
+		randmeaning[i] = meaning;
+		// add a line to show some letters of the word
+		i++;
+	}
+	for(int j=0; j<i; j++){
+		int r = rand() % i;
+		char *temp = randword[j];
+		randword[j] = randword[r];
+		randword[r] = temp;
+		temp = randmeaning[j];
+		randmeaning[j] = randmeaning[r];
+		randmeaning[r] = temp;
+	}
+	for(int j=0; j<i; j++){
+		printf("  %s : %s\n", randword[j], randmeaning[j]) ;
+>>>>>>> Stashed changes
 	}
 	printf("  -----\n\n") ;
+	free(line) ;
 
 	fclose(fp) ;
 }
