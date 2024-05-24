@@ -141,12 +141,6 @@ void show_words ()
 		char * word = strtok(line, "\"") ;
 		strtok(NULL, "\"") ;
 		char * meaning = strtok(NULL, "\"") ;
-<<<<<<< Updated upstream
-
-		printf("  %s : %s\n", word, meaning) ;
-
-		free(line) ;
-=======
 		randword[i] = word;
 		randmeaning[i] = meaning;
 		// add a line to show some letters of the word
@@ -163,7 +157,6 @@ void show_words ()
 	}
 	for(int j=0; j<i; j++){
 		printf("  %s : %s\n", randword[j], randmeaning[j]) ;
->>>>>>> Stashed changes
 	}
 	printf("  -----\n\n") ;
 	free(line) ;
